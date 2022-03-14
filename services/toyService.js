@@ -14,7 +14,7 @@ function getById(toyId) {
     })
 }
 
-function save({ _id, name, price, labels,inStock, createdAt = Date.now() }) {
+function save({ _id, name, price, labels, inStock, createdAt = Date.now() }) {
     const toyToSave = {
         _id,
         name,
@@ -24,6 +24,7 @@ function save({ _id, name, price, labels,inStock, createdAt = Date.now() }) {
         createdAt,
     }
     if (_id) {
+        console.log(toyToSave)
         const idx = toys.findIndex(toy => toy._id === _id)
         toys[idx] = toyToSave
     } else {

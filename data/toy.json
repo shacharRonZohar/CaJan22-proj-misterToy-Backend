@@ -1,75 +1,23 @@
 [
   {
-    "_id": "hMQqG",
-    "name": "test odio",
-    "price": 5318,
+    "_id": "6K71E",
+    "name": "asdasdasd",
+    "price": 123,
+    "labels": [],
+    "inStock": true,
+    "createdAt": 1647294025410
+  },
+  {
+    "_id": "46",
+    "name": "123",
+    "price": 123123,
     "labels": [
       "Doll",
       "Battery Powered",
       "Baby"
     ],
     "inStock": true,
-    "createdAt": 1647289148478
-  },
-  {
-    "_id": "42",
-    "name": "egestas odio",
-    "price": 58,
-    "labels": [
-      "Doll",
-      "Battery Powered",
-      "Baby"
-    ],
-    "createdAt": "1985-01-16T21:56:31.812Z",
-    "inStock": true
-  },
-  {
-    "_id": "43",
-    "name": "sed in",
-    "price": 42,
-    "labels": [
-      "Doll",
-      "Battery Powered",
-      "Baby"
-    ],
-    "createdAt": "1972-08-23T21:23:33.227Z",
-    "inStock": true
-  },
-  {
-    "_id": "44",
-    "name": "sed malesuada",
-    "price": 81,
-    "labels": [
-      "Doll",
-      "Battery Powered",
-      "Baby"
-    ],
-    "createdAt": "1997-08-23T21:48:37.635Z",
-    "inStock": true
-  },
-  {
-    "_id": "45",
-    "name": "tincidunt sit",
-    "price": 80,
-    "labels": [
-      "Doll",
-      "Battery Powered",
-      "Baby"
-    ],
-    "createdAt": "1987-05-04T18:19:07.719Z",
-    "inStock": false
-  },
-  {
-    "_id": "46",
-    "name": "sit adipiscing",
-    "price": 62,
-    "labels": [
-      "Doll",
-      "Battery Powered",
-      "Baby"
-    ],
-    "createdAt": "1987-05-24T05:10:20.385Z",
-    "inStock": true
+    "createdAt": "1987-05-24T05:10:20.385Z"
   },
   {
     "_id": "47",

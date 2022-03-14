@@ -20,7 +20,6 @@ app.get('/api/toy/:toyId', (req, res) => {
 })
 
 app.delete('/api/toy/:toyId', (req, res) => {
-    console.log(req)
     toyService.remove(req.params.toyId)
         .then(() => res.send({ msg: 'Removed' }))
         .catch(err => {
@@ -53,7 +52,8 @@ app.post('/api/toy', (req, res) => {
 
 })
 
-app.put('/api/toy/:toyId', (req, res) => {
+app.put('/api/toy/', (req, res) => {
+    // console.log(req.body)
     // Update
     const {
         _id,
@@ -72,7 +72,7 @@ app.put('/api/toy/:toyId', (req, res) => {
         inStock,
         createdAt
     }
-
+    console.log(toy)
     toyService.save(toy)
         .then((savedToy) => res.send(savedToy))
         .catch(err => {
