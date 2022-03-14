@@ -7,10 +7,10 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/api/toy', (req,res)=>{
+app.get('/api/toy', (req, res) => {
     toyService.query()
-    .then(toys => res.send(toys))
-    .catch(() => res.status(404).send(`Couldnt get toys`))
+        .then(toys => res.send(toys))
+        .catch(() => res.status(404).send(`Couldnt get toys`))
 })
 
 app.get('/api/toy/:toyId', (req, res) => {
@@ -22,36 +22,65 @@ app.get('/api/toy/:toyId', (req, res) => {
 app.delete('/api/toy/:toyId', (req, res) => {
     console.log(req)
     toyService.remove(req.params.toyId)
-       .then(()=> res.send({msg: 'Removed'}))
-       .catch(err=>{
-           console.log('Backend had error: ',err)
-           res.status(404).send('Couldnt remove toy')
-       })
+        .then(() => res.send({ msg: 'Removed' }))
+        .catch(err => {
+            console.log('Backend had error: ', err)
+            res.status(404).send('Couldnt remove toy')
+        })
 
 })
 
-app.post('/api/toy',(req,res)=>{
-     const {
-         name,
-         price,
-         labels,
-         inStock
-     } = req.body
+app.post('/api/toy', (req, res) => {
+    // Create
+    const {
+        name,
+        price,
+        labels,
+        inStock
+    } = req.body
 
-     const toy = {
-         name,
-         price,
-         labels,
-         inStock,
-     }
+    const toy = {
+        name,
+        price,
+        labels,
+        inStock,
+    }
 
     toyService.save(toy)
-     .then(savedToy => res.send(savedToy))
-     .catch(err => {
-         console.log('Backend had error: ', err)
-         res.status(401).send('Cannot create Toy')
-     })
+        .then(savedToy => res.send(savedToy))
+        .catch(err => {
+            console.log('Backend had error: ', err)
+            res.status(401).send('Cannot create Toy')
+        })
 
+})
+
+app.put('/api/toy/:toyId', (req, res) => {
+    // Update
+    const {
+        _id,
+        name,
+        price,
+        labels,
+        inStock,
+        createdAt
+    } = req.body
+
+    const toy = {
+        _id,
+        name,
+        price,
+        labels,
+        inStock,
+        createdAt
+    }
+
+    toyService.save(toy)
+        .then((savedToy) => res.send(savedToy))
+        .catch(err => {
+            console.log('Backend had error: ', err)
+            res.status(404).send(`Couldnt update toy`)
+        })
 })
 
 app.listen(3031,
