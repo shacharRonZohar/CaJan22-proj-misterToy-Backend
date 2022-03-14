@@ -33,10 +33,8 @@ app.delete('/api/toy/:toyId', (req, res) => {
 app.post('/api/toy', (req, res) => {
     // Create
     const {
-        name,
-        price,
-        labels,
-        inStock
+        name, price,
+        labels, inStock
     } = req.body
 
     const toy = {
